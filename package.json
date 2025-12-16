@@ -7,11 +7,11 @@
   "scripts": {
     "dev": "nodemon src/app.js",
     "start": "node src/app.js",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
-    "test:unit": "NODE_OPTIONS='--experimental-vm-modules' jest --testNamePattern='unit'",
-    "test:integration": "NODE_OPTIONS='--experimental-vm-modules' jest --testNamePattern='integration'",
-    "test:watch": "NODE_OPTIONS='--experimental-vm-modules' jest --watch",
-    "test:coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=__tests__/.*\\.test\\.js --testPathIgnorePatterns=teacher\\.test\\.js",
+    "test:integration": "jest teacher.test.js",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio"
